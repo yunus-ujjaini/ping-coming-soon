@@ -1,0 +1,681 @@
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
+/* Box sizing rules */
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --Blue: #4f7df3;
+  --PaleBlue: hsl(223, 100%, 88%);
+  --LightRed: #ff5263;
+  --Gray: rgb(150, 150, 150);
+  --VeryDarkBlue: hsl(209, 33%, 12%);
+}
+
+body {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 20px;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  padding-top: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .logo {
+  position: relative;
+  -webkit-animation: zoomout 2s 2s 1 forwards;
+          animation: zoomout 2s 2s 1 forwards;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.container .logo::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  background-color: red;
+  height: 6px;
+  width: 6px;
+  -webkit-animation: changeColors 0.8s 2 alternate forwards;
+          animation: changeColors 0.8s 2 alternate forwards;
+}
+
+.container .head {
+  font-size: 1.8rem;
+  color: var(--Gray);
+  -webkit-transform: translateY(100vh);
+          transform: translateY(100vh);
+  opacity: 0;
+  -webkit-animation: slideup 0.8s 2.5s 1 forwards;
+          animation: slideup 0.8s 2.5s 1 forwards;
+}
+
+.container .head span {
+  font-weight: 700;
+  color: black;
+}
+
+.container .sub-head {
+  margin: 1rem 0rem;
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.8);
+  -webkit-transform: translateY(100vh);
+          transform: translateY(100vh);
+  opacity: 0;
+  -webkit-animation: slideup 0.8s 2.5s 1 forwards;
+          animation: slideup 0.8s 2.5s 1 forwards;
+}
+
+.container .email-comp {
+  width: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translateY(100vh);
+          transform: translateY(100vh);
+  opacity: 0;
+  -webkit-animation: slideup 0.8s 2.5s 1 forwards;
+          animation: slideup 0.8s 2.5s 1 forwards;
+  position: relative;
+}
+
+.container .email-comp input {
+  padding: 0.7rem 2rem;
+  border-radius: 100px;
+  border: 1px solid #4f7df399;
+  outline: none;
+  font-size: 1rem;
+}
+
+.container .email-comp ::-webkit-input-placeholder {
+  color: rgba(187, 172, 172, 0.6);
+  opacity: 1;
+  /* Firefox */
+}
+
+.container .email-comp :-ms-input-placeholder {
+  color: rgba(187, 172, 172, 0.6);
+  opacity: 1;
+  /* Firefox */
+}
+
+.container .email-comp ::-ms-input-placeholder {
+  color: rgba(187, 172, 172, 0.6);
+  opacity: 1;
+  /* Firefox */
+}
+
+.container .email-comp ::placeholder {
+  color: rgba(187, 172, 172, 0.6);
+  opacity: 1;
+  /* Firefox */
+}
+
+.container .email-comp :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(187, 172, 172, 0.6);
+}
+
+.container .email-comp ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgba(187, 172, 172, 0.6);
+}
+
+.container .email-comp button {
+  margin: 1rem 0px;
+  background-color: var(--Blue);
+  color: white;
+  font-weight: 500;
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 100px;
+  font-size: 1rem;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.container .email-comp button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 5px 0px var(--Blue);
+          box-shadow: 0px 0px 5px 0px var(--Blue);
+}
+
+.container .main-img {
+  margin: 5rem 0px;
+  max-width: 90%;
+  -webkit-transform: translateY(100vh);
+          transform: translateY(100vh);
+  opacity: 0;
+  -webkit-animation: slideup 0.8s 2.5s 1 forwards;
+          animation: slideup 0.8s 2.5s 1 forwards;
+}
+
+.container .social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateY(100vh);
+          transform: translateY(100vh);
+  opacity: 0;
+  -webkit-animation: slideup 0.8s 2.5s 1 forwards;
+          animation: slideup 0.8s 2.5s 1 forwards;
+}
+
+.container .social .icon {
+  border: 1px solid var(--Blue);
+  border-radius: 50%;
+  padding: 7px;
+  margin: 10px 5px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.container .social .icon:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 5px 0px var(--Blue);
+          box-shadow: 0px 0px 5px 0px var(--Blue);
+}
+
+.container .copyright {
+  margin: 0.5rem 0px;
+  font-size: 0.7rem;
+  color: var(--Gray);
+  margin-bottom: 3rem;
+  -webkit-transform: translateY(100vh);
+          transform: translateY(100vh);
+  opacity: 0;
+  -webkit-animation: slideup 0.8s 2.5s 1 forwards;
+          animation: slideup 0.8s 2.5s 1 forwards;
+}
+
+.error::before {
+  content: 'please provide a valid email address';
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  font-size: 0.6rem;
+  color: var(--LightRed);
+  top: 37%;
+  -webkit-animation: shake 0.2s 1 forwards;
+          animation: shake 0.2s 1 forwards;
+}
+
+.count {
+  margin-top: 10vh;
+  -webkit-animation: hide 2.5s 1 forwards;
+          animation: hide 2.5s 1 forwards;
+}
+
+@-webkit-keyframes hide {
+  0% {
+    margin-top: 10vh;
+    opacity: 1;
+    display: block;
+  }
+  90% {
+    margin-top: 10vh;
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    margin-top: 0vh;
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes hide {
+  0% {
+    margin-top: 10vh;
+    opacity: 1;
+    display: block;
+  }
+  90% {
+    margin-top: 10vh;
+    opacity: 0;
+    display: block;
+  }
+  100% {
+    margin-top: 0vh;
+    opacity: 0;
+    display: none;
+  }
+}
+
+@-webkit-keyframes zoomout {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes zoomout {
+  0% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes changeColors {
+  0% {
+    opacity: 0;
+    background-color: red;
+  }
+  10% {
+    opacity: 1;
+    background-color: yellow;
+  }
+  20% {
+    opacity: 1;
+    background-color: blue;
+  }
+  30% {
+    opacity: 1;
+    background-color: indianred;
+  }
+  40% {
+    opacity: 1;
+    background-color: palegreen;
+  }
+  50% {
+    opacity: 1;
+    background-color: olive;
+  }
+  60% {
+    opacity: 1;
+    background-color: violet;
+  }
+  70% {
+    opacity: 1;
+    background-color: black;
+  }
+  80% {
+    opacity: 1;
+    background-color: burlywood;
+  }
+  90% {
+    opacity: 1;
+    background-color: orange;
+  }
+  100% {
+    opacity: 0;
+    background-color: red;
+  }
+}
+
+@keyframes changeColors {
+  0% {
+    opacity: 0;
+    background-color: red;
+  }
+  10% {
+    opacity: 1;
+    background-color: yellow;
+  }
+  20% {
+    opacity: 1;
+    background-color: blue;
+  }
+  30% {
+    opacity: 1;
+    background-color: indianred;
+  }
+  40% {
+    opacity: 1;
+    background-color: palegreen;
+  }
+  50% {
+    opacity: 1;
+    background-color: olive;
+  }
+  60% {
+    opacity: 1;
+    background-color: violet;
+  }
+  70% {
+    opacity: 1;
+    background-color: black;
+  }
+  80% {
+    opacity: 1;
+    background-color: burlywood;
+  }
+  90% {
+    opacity: 1;
+    background-color: orange;
+  }
+  100% {
+    opacity: 0;
+    background-color: red;
+  }
+}
+
+@-webkit-keyframes slideup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+}
+
+@keyframes slideup {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0vh);
+            transform: translateY(0vh);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .container {
+    min-height: 100vh;
+    width: 100vw;
+    padding-top: 10vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .logo {
+    position: relative;
+    -webkit-animation: zoomout 2s 2s 1 forwards;
+            animation: zoomout 2s 2s 1 forwards;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  .container .logo::after {
+    content: '';
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    background-color: red;
+    height: 6px;
+    width: 6px;
+    -webkit-animation: changeColors 0.8s 2 alternate forwards;
+            animation: changeColors 0.8s 2 alternate forwards;
+  }
+  .container .head {
+    font-size: 3rem;
+    color: var(--Gray);
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+    opacity: 0;
+    -webkit-animation: slideup 0.8s 2.5s 1 forwards;
+            animation: slideup 0.8s 2.5s 1 forwards;
+  }
+  .container .head span {
+    font-weight: 700;
+    color: black;
+  }
+  .container .sub-head {
+    margin: 1rem 0rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.8);
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+    opacity: 0;
+    -webkit-animation: slideup 0.8s 2.5s 1 forwards;
+            animation: slideup 0.8s 2.5s 1 forwards;
+  }
+  .container .email-comp {
+    width: 50rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+    opacity: 0;
+    -webkit-animation: slideup 0.8s 2.5s 1 forwards;
+            animation: slideup 0.8s 2.5s 1 forwards;
+  }
+  .container .email-comp input {
+    padding: 0.7rem 2rem;
+    margin: 1rem 10px;
+    width: 60%;
+    border-radius: 100px;
+    border: 1px solid rgba(79, 125, 243, 0.6);
+    outline: none;
+    font-size: 1rem;
+  }
+  .container .email-comp ::-webkit-input-placeholder {
+    color: rgba(187, 172, 172, 0.6);
+    opacity: 1;
+    /* Firefox */
+  }
+  .container .email-comp :-ms-input-placeholder {
+    color: rgba(187, 172, 172, 0.6);
+    opacity: 1;
+    /* Firefox */
+  }
+  .container .email-comp ::-ms-input-placeholder {
+    color: rgba(187, 172, 172, 0.6);
+    opacity: 1;
+    /* Firefox */
+  }
+  .container .email-comp ::placeholder {
+    color: rgba(187, 172, 172, 0.6);
+    opacity: 1;
+    /* Firefox */
+  }
+  .container .email-comp :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgba(187, 172, 172, 0.6);
+  }
+  .container .email-comp ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgba(187, 172, 172, 0.6);
+  }
+  .container .email-comp button {
+    margin: 1rem 0px;
+    background-color: var(--Blue);
+    color: white;
+    font-weight: 500;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 100px;
+    font-size: 1rem;
+  }
+  .container .main-img {
+    margin: 5rem 0px;
+    max-width: 60%;
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+    opacity: 0;
+    -webkit-animation: slideup 0.8s 2.5s 1 forwards;
+            animation: slideup 0.8s 2.5s 1 forwards;
+  }
+  .container .social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+    opacity: 0;
+    -webkit-animation: slideup 0.8s 2.5s 1 forwards;
+            animation: slideup 0.8s 2.5s 1 forwards;
+  }
+  .container .social .icon {
+    border: 1px solid var(--Blue);
+    border-radius: 50%;
+    padding: 7px;
+    margin: 10px 5px;
+  }
+  .container .copyright {
+    margin: 0.5rem 0px;
+    font-size: 0.7rem;
+    color: var(--Gray);
+    margin-bottom: 3rem;
+    -webkit-transform: translateY(100vh);
+            transform: translateY(100vh);
+    opacity: 0;
+    -webkit-animation: slideup 0.8s 2.5s 1 forwards;
+            animation: slideup 0.8s 2.5s 1 forwards;
+  }
+  .error::before {
+    content: 'please provide a valid email address';
+    position: absolute;
+    left: 0px;
+    right: 50%;
+    text-align: center;
+    font-size: 0.6rem;
+    color: var(--LightRed);
+    top: 80%;
+    -webkit-animation: shake 0.2s 1 forwards;
+            animation: shake 0.2s 1 forwards;
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  40% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  60% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  20% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  40% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  60% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+/*# sourceMappingURL=main.css.map */
